@@ -9,10 +9,9 @@
 // @match        https://*.discord.com/login
 // @grant        none
 // @icon         https://raw.githubusercontent.com/sketchedgrey/Bagelbot/main/icon.png
+// @downloadURL  https://github.com/sketchedgrey/Bagelbot/raw/main/bagelbot.js
+// @updateURL    https://github.com/sketchedgrey/Bagelbot/raw/main/bagelbot.js
 // ==/UserScript==
-
-// @downloadURL
-// @updateURL
 
 /* DOCUMENTATION
 
