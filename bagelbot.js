@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bagelbot
 // @namespace    http://tampermonkey.net/
-// @version      0.69
+// @version      1.0
 // @description  Discord automatic message sender
 // @author       sketchedgrey
 // @match        https://*.discord.com/app
