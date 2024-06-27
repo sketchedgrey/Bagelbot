@@ -28,7 +28,7 @@ Ceiling ......... The maximum amount of the delay's random offset in seconds
 	'use strict';
 
 	let token = localStorage.getItem("token").replace(/['"]+/g, '');
-  let intervalId = null;
+	let intervalId = null;
 	let delay = 0;
 	let offset = 0;
 
@@ -140,8 +140,8 @@ Ceiling ......... The maximum amount of the delay's random offset in seconds
 				ceilingObject.disabled = true;
 
 				intervalId = setInterval(() => {
-          console.info("Sending '" + messageValue + "' from " + token + " to '" + channelValue + "' on " + Date().toLocaleString() + "in honor of Baron von Bagelbeard...");
-          message(messageValue, token, channelValue)
+					console.info("Sending '" + messageValue + "' from " + token + " to '" + channelValue + "' on " + Date().toLocaleString() + "in honor of Baron von Bagelbeard...");
+					message(messageValue, token, channelValue)
 				}, delay);
 
 				console.log(`Bagelbot started`);
@@ -174,35 +174,35 @@ Ceiling ......... The maximum amount of the delay's random offset in seconds
 		}
 	}
 
-  function message(message, token, channel) {
-        const nonce = Math.floor(Math.random() * 9000000000000000000) + 1000000000000000000;
+	function message(message, token, channel) {
+		const nonce = Math.floor(Math.random() * 9000000000000000000) + 1000000000000000000;
 
-        const url = `https://discord.com/api/v9/channels/${channel}/messages`;
+		const url = `https://discord.com/api/v9/channels/${channel}/messages`;
 
-        const data = {
-            content: message,
-            nonce: nonce.toString(),
-            tts: false
-        };
+		const data = {
+			content: message,
+			nonce: nonce.toString(),
+			tts: false
+		};
 
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-                'Authorization': token,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        };
+		const requestOptions = {
+			method: 'POST',
+			headers: {
+				'Authorization': token,
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		};
 
-        fetch(url, requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                console.log('Message sent:', data);
-            })
-            .catch(error => {
-                console.error('Error sending message:', error);
-            });
-    }
+		fetch(url, requestOptions)
+			.then(response => response.json())
+			.then(data => {
+				console.log('Message sent:', data);
+			})
+			.catch(error => {
+				console.error('Error sending message:', error);
+			});
+	}
 
 	window.addEventListener('load', () => {
 		addElements();
