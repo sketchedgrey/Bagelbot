@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bagelbot
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Discord automatic message sender
 // @author       sketchedgrey
 // @match        https://*.discord.com/app
@@ -127,6 +127,8 @@
 				delayObject.disabled = true;
 				floorObject.disabled = true;
 				ceilingObject.disabled = true;
+
+				message(messageValue, token, channelValue);
 
 				intervalId = setInterval(() => {
 					console.info("Sending '" + messageValue + "' from " + token + " to '" + channelValue + "' on " + Date().toLocaleString() + "in honor of Baron von Bagelbeard the Burnt...");
