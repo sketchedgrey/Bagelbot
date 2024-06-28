@@ -13,17 +13,6 @@
 // @updateURL    https://github.com/sketchedgrey/Bagelbot/raw/main/bagelbot.js
 // ==/UserScript==
 
-/* DOCUMENTATION
-
-Checkbox ........ Enable or disable Bagelbot. Messages will be sent as long as the checkbox is enabled
-Message ......... Desired message to send
-Channel ID ...... Desired channel to send messages which can be found in the second numberic string in Discord's URL. Example: `0000000000000000000` in `discord.com/channels/@me/0000000000000000000`
-Delay ........... The amount of time between sending messages in seconds
-Floor ........... The minimum amount of the delay's random offset in seconds
-Ceiling ......... The maximum amount of the delay's random offset in seconds
-
-*/
-
 (function() {
 	'use strict';
 
@@ -87,7 +76,7 @@ Ceiling ......... The maximum amount of the delay's random offset in seconds
 			input.id = config.name.replace(/\s+/g, '-').toLowerCase();
 			input.placeholder = config.name;
 			input.value = config.defaultValue;
-			input.style.width = '70px'; // Adjust width as needed
+			input.style.width = '80px'; // Adjust width as needed
 			input.style.marginLeft = '5px';
 			inputs.push(input);
 			container.appendChild(input);
@@ -140,7 +129,7 @@ Ceiling ......... The maximum amount of the delay's random offset in seconds
 				ceilingObject.disabled = true;
 
 				intervalId = setInterval(() => {
-					console.info("Sending '" + messageValue + "' from " + token + " to '" + channelValue + "' on " + Date().toLocaleString() + "in honor of Baron von Bagelbeard...");
+					console.info("Sending '" + messageValue + "' from " + token + " to '" + channelValue + "' on " + Date().toLocaleString() + "in honor of Baron von Bagelbeard the Burnt...");
 					message(messageValue, token, channelValue)
 				}, delay);
 
