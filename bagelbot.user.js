@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bagelbot
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Discord automatic message sender
 // @author       sketchedgrey
 // @match        https://*.discord.com/app
@@ -170,6 +170,8 @@
 
 		const data = {
 			content: message,
+			flags: 0,
+			mobile_network_type: "unknown"
 			nonce: nonce.toString(),
 			tts: false
 		};
@@ -179,6 +181,9 @@
 			headers: {
 				'Authorization': token,
 				'Content-Type': 'application/json'
+				'Host': 'discord.com'
+				'Origin': 'https://discord.com'
+				'Priority:u=1'
 			},
 			body: JSON.stringify(data)
 		};
