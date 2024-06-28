@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bagelbot
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.1
 // @description  Discord automatic message sender
 // @author       sketchedgrey
 // @match        https://*.discord.com/app
@@ -182,7 +182,7 @@
 				'Authorization': token,
 				'Content-Type': 'application/json',
 				'Host': 'discord.com',
-				'Priority:u=1'
+				'Priority': 'u=1'
 			},
 			body: JSON.stringify(data)
 		};
