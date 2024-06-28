@@ -171,7 +171,7 @@
 		const data = {
 			content: message,
 			flags: 0,
-			mobile_network_type: "unknown"
+			mobile_network_type: "unknown",
 			nonce: nonce.toString(),
 			tts: false
 		};
@@ -180,9 +180,8 @@
 			method: 'POST',
 			headers: {
 				'Authorization': token,
-				'Content-Type': 'application/json'
-				'Host': 'discord.com'
-				'Origin': 'https://discord.com'
+				'Content-Type': 'application/json',
+				'Host': 'discord.com',
 				'Priority:u=1'
 			},
 			body: JSON.stringify(data)
